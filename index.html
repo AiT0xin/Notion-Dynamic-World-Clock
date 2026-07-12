@@ -5,33 +5,33 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Clock</title>
 </head>
-<body style="margin:0;padding:0;width:100%;height:100vh;background:#1b1a19;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+<body style="margin:0;padding:0;position:fixed;top:0;left:0;right:0;bottom:0;background:#1b1a19;overflow:hidden;display:flex;align-items:center;justify-content:center;">
 
 <div id="inner" style="display:flex;flex-direction:column;align-items:center;gap:9px;transform-origin:center center;">
 
   <div style="display:flex;align-items:center;gap:10px;">
 
     <!-- Hours card -->
-    <div style="position:relative;width:136px;height:148px;border-radius:16px;background:#2a2927;box-shadow:0 8px 24px rgba(0,0,0,.55);overflow:hidden;flex-shrink:0;">
+    <div style="position:relative;width:136px;height:118px;border-radius:16px;background:#2a2927;box-shadow:0 8px 24px rgba(0,0,0,.55);overflow:hidden;flex-shrink:0;">
       <!-- upper static: shows current digit top half -->
-      <div style="position:absolute;top:0;left:0;width:136px;height:74px;overflow:hidden;z-index:1;">
-        <span id="hh-u" style="position:absolute;top:0;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;top:0;left:0;width:136px;height:59px;overflow:hidden;z-index:1;">
+        <span id="hh-u" style="position:absolute;top:0;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
       </div>
       <!-- lower static: shows current digit bottom half -->
-      <div style="position:absolute;bottom:0;left:0;width:136px;height:74px;overflow:hidden;z-index:1;background:#252321;">
-        <span id="hh-l" style="position:absolute;top:-74px;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;bottom:0;left:0;width:136px;height:59px;overflow:hidden;z-index:1;background:#252321;">
+        <span id="hh-l" style="position:absolute;top:-59px;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
       </div>
       <!-- flap top: shows old digit top, folds downward -->
-      <div style="position:absolute;top:0;left:0;width:136px;height:74px;perspective:280px;z-index:3;pointer-events:none;">
-        <div id="hh-ft" style="position:relative;width:136px;height:74px;overflow:hidden;transform-origin:center bottom;transform:rotateX(0deg);background:#2a2927;">
-          <span id="hh-ft-t" style="position:absolute;top:0;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;top:0;left:0;width:136px;height:59px;perspective:280px;z-index:3;pointer-events:none;">
+        <div id="hh-ft" style="position:relative;width:136px;height:59px;overflow:hidden;transform-origin:center bottom;transform:rotateX(0deg);background:#2a2927;">
+          <span id="hh-ft-t" style="position:absolute;top:0;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.22));pointer-events:none;"></div>
         </div>
       </div>
       <!-- flap bottom: shows new digit bottom, unfolds upward -->
-      <div style="position:absolute;bottom:0;left:0;width:136px;height:74px;perspective:280px;z-index:3;pointer-events:none;">
-        <div id="hh-fb" style="position:relative;width:136px;height:74px;overflow:hidden;transform-origin:center top;transform:rotateX(90deg);background:#252321;">
-          <span id="hh-fb-t" style="position:absolute;top:-74px;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;bottom:0;left:0;width:136px;height:59px;perspective:280px;z-index:3;pointer-events:none;">
+        <div id="hh-fb" style="position:relative;width:136px;height:59px;overflow:hidden;transform-origin:center top;transform:rotateX(90deg);background:#252321;">
+          <span id="hh-fb-t" style="position:absolute;top:-59px;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
           <div style="position:absolute;inset:0;background:linear-gradient(to top,transparent 40%,rgba(0,0,0,0.22));pointer-events:none;"></div>
         </div>
       </div>
@@ -42,22 +42,22 @@
     <div style="font-family:Georgia,'Times New Roman',serif;font-size:100px;font-weight:700;color:#f1efec;line-height:1;flex-shrink:0;margin-bottom:8px;">:</div>
 
     <!-- Minutes card -->
-    <div style="position:relative;width:136px;height:148px;border-radius:16px;background:#2a2927;box-shadow:0 8px 24px rgba(0,0,0,.55);overflow:hidden;flex-shrink:0;">
-      <div style="position:absolute;top:0;left:0;width:136px;height:74px;overflow:hidden;z-index:1;">
-        <span id="mm-u" style="position:absolute;top:0;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+    <div style="position:relative;width:136px;height:118px;border-radius:16px;background:#2a2927;box-shadow:0 8px 24px rgba(0,0,0,.55);overflow:hidden;flex-shrink:0;">
+      <div style="position:absolute;top:0;left:0;width:136px;height:59px;overflow:hidden;z-index:1;">
+        <span id="mm-u" style="position:absolute;top:0;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
       </div>
-      <div style="position:absolute;bottom:0;left:0;width:136px;height:74px;overflow:hidden;z-index:1;background:#252321;">
-        <span id="mm-l" style="position:absolute;top:-74px;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;bottom:0;left:0;width:136px;height:59px;overflow:hidden;z-index:1;background:#252321;">
+        <span id="mm-l" style="position:absolute;top:-59px;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
       </div>
-      <div style="position:absolute;top:0;left:0;width:136px;height:74px;perspective:280px;z-index:3;pointer-events:none;">
-        <div id="mm-ft" style="position:relative;width:136px;height:74px;overflow:hidden;transform-origin:center bottom;transform:rotateX(0deg);background:#2a2927;">
-          <span id="mm-ft-t" style="position:absolute;top:0;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;top:0;left:0;width:136px;height:59px;perspective:280px;z-index:3;pointer-events:none;">
+        <div id="mm-ft" style="position:relative;width:136px;height:59px;overflow:hidden;transform-origin:center bottom;transform:rotateX(0deg);background:#2a2927;">
+          <span id="mm-ft-t" style="position:absolute;top:0;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
           <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.22));pointer-events:none;"></div>
         </div>
       </div>
-      <div style="position:absolute;bottom:0;left:0;width:136px;height:74px;perspective:280px;z-index:3;pointer-events:none;">
-        <div id="mm-fb" style="position:relative;width:136px;height:74px;overflow:hidden;transform-origin:center top;transform:rotateX(90deg);background:#252321;">
-          <span id="mm-fb-t" style="position:absolute;top:-74px;left:0;width:136px;height:148px;display:flex;align-items:center;justify-content:center;font-size:112px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
+      <div style="position:absolute;bottom:0;left:0;width:136px;height:59px;perspective:280px;z-index:3;pointer-events:none;">
+        <div id="mm-fb" style="position:relative;width:136px;height:59px;overflow:hidden;transform-origin:center top;transform:rotateX(90deg);background:#252321;">
+          <span id="mm-fb-t" style="position:absolute;top:-59px;left:0;width:136px;height:118px;display:flex;align-items:center;justify-content:center;font-size:96px;font-weight:700;font-family:Georgia,'Times New Roman',serif;color:#f0eeeb;line-height:1;letter-spacing:-0.05em;font-variant-numeric:tabular-nums;"></span>
           <div style="position:absolute;inset:0;background:linear-gradient(to top,transparent 40%,rgba(0,0,0,0.22));pointer-events:none;"></div>
         </div>
       </div>
@@ -87,9 +87,19 @@
   var MON  = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   var flipTimers = {};
 
+  function syncMapWidth() {
+    var clockRow = document.getElementById('inner').children[0];
+    if (!clockRow) return;
+    var rw = clockRow.offsetWidth;
+    if (!rw) return;
+    mapEl.style.width  = rw + 'px';
+    mapEl.style.height = Math.round(rw * MH / MW) + 'px';
+  }
+
   function rescale() {
     var el = document.getElementById('inner');
     el.style.transform = 'none';
+    syncMapWidth();
     var nw = el.offsetWidth, nh = el.offsetHeight;
     var vw = window.innerWidth, vh = window.innerHeight;
     if (!nw || !nh || !vw || !vh) return;
@@ -98,7 +108,9 @@
     el.style.transform = 'scale(' + s + ')';
   }
   window.addEventListener('resize', rescale);
-  // Fire multiple times — Notion iframes often report wrong viewport on first load
+  if (window.ResizeObserver) {
+    new ResizeObserver(rescale).observe(document.documentElement);
+  }
   requestAnimationFrame(function(){ requestAnimationFrame(rescale); });
   setTimeout(rescale, 150);
   setTimeout(rescale, 500);
@@ -140,12 +152,25 @@
     return (now >= s && now < e) ? 1 : 0;
   }
 
+  // Persist timezone across refreshes: tries localStorage, cookie, and ?tz= URL param
+  function saveTz(val) {
+    var s = String(val);
+    try { localStorage.setItem('clockOffset', s); } catch(e) {}
+    try { document.cookie = 'clockOffset=' + encodeURIComponent(s) + ';max-age=31536000;path=/;SameSite=Lax'; } catch(e) {}
+  }
+  function loadTz() {
+    try { var p = new URLSearchParams(window.location.search); if (p.has('tz')) return p.get('tz'); } catch(e) {}
+    try { var ls = localStorage.getItem('clockOffset'); if (ls !== null) return ls; } catch(e) {}
+    try { var m = document.cookie.match(/(?:^|;\s*)clockOffset=([^;]*)/); if (m) return decodeURIComponent(m[1]); } catch(e) {}
+    return null;
+  }
+
   var useGMT = false;
   var currentOffset = 8;
   var customActive = false;
 
   (function(){
-    var saved; try { saved = localStorage.getItem('clockOffset'); } catch(e) {}
+    var saved = loadTz();
     if (saved === 'gmt') { useGMT = true; currentOffset = ukOffset(); return; }
     var n = parseFloat(saved);
     if (!isNaN(n)) currentOffset = n;
@@ -153,8 +178,8 @@
 
   function offset() { return useGMT ? ukOffset() : currentOffset; }
 
-  var BTN  = 'background:transparent;border:1px solid rgba(255,255,255,.2);color:#b9b7b3;font-family:inherit;font-size:13px;padding:5px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;line-height:1.2;';
-  var BTNON= 'background:#f1efec;border:1px solid #f1efec;color:#1b1a19;font-family:inherit;font-size:13px;padding:5px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;line-height:1.2;';
+  var BTN  = 'background:transparent;border:1px solid rgba(255,255,255,.2);color:#b9b7b3;font-family:inherit;font-size:13px;padding:5px 13px;border-radius:12px;cursor:pointer;white-space:nowrap;line-height:1.2;';
+  var BTNON= 'background:#f1efec;border:1px solid #f1efec;color:#1b1a19;font-family:inherit;font-size:13px;padding:5px 13px;border-radius:12px;cursor:pointer;white-space:nowrap;line-height:1.2;';
 
   var zones = [
     { label:'−4',  off:-4,  gmt:false },
@@ -194,7 +219,7 @@
       useGMT = z.gmt;
       customActive = false;
       if (!z.gmt) currentOffset = z.off;
-      try { localStorage.setItem('clockOffset', z.gmt ? 'gmt' : z.off); } catch(e) {}
+      saveTz(z.gmt ? 'gmt' : z.off);
       setActive(i);
       customBtn.textContent = '▾';
       tick(); drawMap(); closeDD();
@@ -261,7 +286,7 @@
         item.addEventListener('click', function(e){
           e.stopPropagation();
           useGMT = false; currentOffset = off; customActive = true;
-          try { localStorage.setItem('clockOffset', off); } catch(e2) {}
+          saveTz(off);
           setActive(customIdx);
           customBtn.textContent = offShort(off);
           tick(); drawMap(); closeDD();
@@ -438,7 +463,7 @@
 
   // ── Active pill state ─────────────────────────────────────────────
   (function(){
-    var saved; try { saved = localStorage.getItem('clockOffset'); } catch(e) {}
+    var saved = loadTz();
     if (saved === 'gmt') { btns[1].style.cssText = BTNON; return; }
     var n = parseFloat(saved);
     if (!isNaN(n)) {
