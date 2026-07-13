@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Clock</title>
 </head>
-<body style="margin:0;padding:0;position:fixed;top:0;left:0;right:0;bottom:0;background:#1b1a19;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+<body style="margin:0;padding:0;position:fixed;top:0;left:0;right:0;bottom:0;background:transparent;overflow:hidden;display:flex;align-items:center;justify-content:center;">
 
 <div id="inner" style="display:flex;flex-direction:column;align-items:center;gap:9px;transform-origin:center center;">
 
@@ -66,7 +66,7 @@
 
   </div>
 
-  <div id="date" style="font-family:Georgia,'Times New Roman',serif;color:#f3f1ee;font-size:18px;font-weight:700;letter-spacing:.3px;white-space:nowrap;"></div>
+  <div id="date" style="font-family:Georgia,'Times New Roman',serif;color:#f3f1ee;font-size:24px;font-weight:700;letter-spacing:.3px;white-space:nowrap;"></div>
   <div id="zones" style="display:flex;gap:7px;flex-wrap:wrap;justify-content:center;"></div>
 
 </div>
@@ -178,8 +178,8 @@
 
   function offset() { return useGMT ? ukOffset() : currentOffset; }
 
-  var BTN  = 'background:transparent;border:1px solid rgba(255,255,255,.2);color:#b9b7b3;font-family:inherit;font-size:13px;padding:5px 13px;border-radius:12px;cursor:pointer;white-space:nowrap;line-height:1.2;';
-  var BTNON= 'background:#f1efec;border:1px solid #f1efec;color:#1b1a19;font-family:inherit;font-size:13px;padding:5px 13px;border-radius:12px;cursor:pointer;white-space:nowrap;line-height:1.2;';
+  var BTN  = 'background:transparent;border:1px solid rgba(255,255,255,.2);color:#b9b7b3;font-family:inherit;font-size:17px;padding:6px 16px;border-radius:12px;cursor:pointer;white-space:nowrap;line-height:1.2;';
+  var BTNON= 'background:#f1efec;border:1px solid #f1efec;color:#1b1a19;font-family:inherit;font-size:17px;padding:6px 16px;border-radius:12px;cursor:pointer;white-space:nowrap;line-height:1.2;';
 
   var zones = [
     { label:'−4',  off:-4,  gmt:false },
@@ -207,7 +207,7 @@
       main.textContent = 'GMT';
       var dst = document.createElement('span');
       dst.id = 'dst-lbl';
-      dst.style.cssText = 'font-size:8px;opacity:0.65;letter-spacing:0.3px;display:block;height:9px;';
+      dst.style.cssText = 'font-size:10px;opacity:0.65;letter-spacing:0.3px;display:block;height:11px;';
       dst.textContent = ukOffset() === 1 ? 'BST +1' : '';
       wrap.appendChild(main);
       wrap.appendChild(dst);
